@@ -1,0 +1,237 @@
+//step2-1
+'use strict';
+
+function foo(func) {
+ func();
+  
+}
+
+function bar() {
+  console.log('Hello, I am bar!');
+}
+
+foo(bar);
+
+// Do not change or remove anything below this line
+module.exports = foo;
+*********************
+*********************
+//step2-2
+'use strict';
+
+function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
+  const numbers = [];
+// Replace this comment and the next line with your code
+  for (let number=startIndex; number<=stopIndex; number++){
+      numbers.unshift(number);
+      if(number%3===0){
+          sayThree(number);
+      }
+      if(number%5===0){
+      sayFive(number);
+      }
+  }
+  console.log( numbers);
+}
+
+function sayThree(number) {
+  // Replace this comment and the next line with your code
+  console.log(sayThree);
+}
+
+function sayFive(number) {
+  // Replace this comment and the next line with your code
+  console.log(sayFive);
+}
+
+threeFive(10, 15, sayThree, sayFive);
+
+// Do not change or remove anything below this line
+module.exports = threeFive;
+******************
+******************
+//step2-3
+'use strict';
+
+// Use a 'for' loop
+function repeatStringNumTimesWithFor(str, num) {
+  // eslint-disable-next-line prefer-const
+  let result = '';
+  for (let i=0;i<num;i++){
+  result+= str;
+ if(i===num){
+     return result;
+ }
+  } 
+  return result;
+}
+
+console.log('for', repeatStringNumTimesWithFor('abc', 3));
+
+// Use a 'while' loop
+function repeatStringNumTimesWithWhile(str, num) {
+  // eslint-disable-next-line prefer-const
+ 
+  let result = '';
+  while(num>0){
+    result +=str;
+    num--;
+}
+
+  // Replace this comment and the next line with your code
+ 
+
+  return result;
+}
+
+console.log('while', repeatStringNumTimesWithWhile('abc', 3));
+
+// Use a 'do...while' loop
+function repeatStringNumTimesWithDoWhile(str, num) {
+  // eslint-disable-next-line prefer-const
+  let result = '';
+  do{
+    result +=str;
+    num--;
+  }
+while (num>0);
+  // Replace this comment and the next line with your code
+  
+
+  return result;
+}
+
+console.log('do-while', repeatStringNumTimesWithDoWhile('abc', 3));
+
+// Do not change or remove anything below this line
+module.exports = {
+  repeatStringNumTimesWithFor,
+  repeatStringNumTimesWithWhile,
+  repeatStringNumTimesWithDoWhile,
+};
+*****************
+*****************
+//step2-4
+'use strict';
+
+function Dog() {
+  this.color="off-white";
+  this.name="zingo";
+  this.numLeges=4;
+}
+
+const hound = new Dog();
+console.log(hound);
+// Do not change or remove anything below this line
+module.exports = hound;
+*****************
+*****************
+//step2-5
+'use strict';
+function multiplyAll(arr) {
+ // eslint-disable-next-line
+  let product = 1;
+
+  // Replace this comment and the next line with your code
+  //console.log(arr, product);
+for (let i=0;i<arr.length;i++){
+    for(let j=0;j<arr[i].length;j++){
+        product=product*arr[i][j];
+    }
+}
+
+  return product;
+}
+
+const result = multiplyAll([[1, 2], [3, 4], [5, 6]]);
+console.log(result); // 720
+
+// Do not change or remove anything below this line
+module.exports = multiplyAll;
+****************
+****************
+//step2-6
+'use strict';
+
+const arr2d = [[1, 2], [3, 4], [5, 6]];
+const arr3d = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+
+function flattenArray2d(arr) {
+  // Replace this comment and the next line with your code
+ // console.log(arr);
+ const twoD=[];
+ for (let i=0;i<arr.length;i++){
+     for (let j=0;j<arr[i].length;j++){
+        twoD.push(arr[i][j]);
+     }
+    }
+console.log(twoD);
+}
+function flattenArray3d(arr) {
+  // Replace this comment and the next line with your code
+ // console.log(arr);
+ const threeD=[ ];
+ for(let x=0;x<arr.length;x++){
+     for(let y=0;y<arr[x].legth;y++){
+         for(let z=0;z<arr[y];z++){
+              threeD.push(arr[x][y][z]);
+         }
+     }
+ }
+ console.log(threeD);
+}
+
+console.log(flattenArray2d(arr2d)); // -> [1, 2, 3, 4, 5, 6]
+console.log(flattenArray3d(arr3d)); // -> [1, 2, 3, 4, 5, 6, 7, 8]
+
+// Do not change or remove anything below this line
+module.exports = {
+  flattenArray2d,
+  flattenArray3d,
+};
+**************
+**************
+//step2-7
+'use strict';
+
+const x = 9;
+function f1(val) {
+  val = val + 1;
+  return val;
+}
+
+f1(x);
+
+console.log(x);
+
+const y = { x: 9 };
+function f2(val) {
+  val.x = val.x + 1;
+  return val;
+}
+
+f2(y);
+
+console.log(y);
+
+// Add your explanation as a comment here
+//Due to x is a constant and declaerd in the first function so when we print out f1 it will give us 9.
+//Due to y is an object and the 2nd function use x as a key to chang the value. so it will return 10.
+************************
+************************
+//step3-bouns
+'use strict';
+
+const values = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c'];
+
+function makeUnique(arr) {
+  // Replace this comment and the next line with your code
+  //console.log(arr)
+return arr.filter((values,i)=> arr. indexof (values)===i);
+}
+
+const uniqueValues = makeUnique(values);
+console.log(uniqueValues);
+
+// Do not change or remove anything below this line
+module.exports = makeUnique;
